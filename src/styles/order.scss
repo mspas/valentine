@@ -18,7 +18,7 @@
 
   img {
     width: 75px;
-    border-radius: 5px;
+    border-radius: 50px;
   }
 
   &__details {
@@ -177,5 +177,5 @@ button.overview {
   cursor: pointer;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
   padding-left: 8px;
-  margin: 20px auto;
+  margin: 20px auto 10px;
 }

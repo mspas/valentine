@@ -1,3 +1,50 @@
 .details-container {
   background: linear-gradient(to bottom, #fcddff, #dd9cee);
+  min-height: 100vh;
+  height: auto;
+  padding-block: 24px;
+}
+
+.card {
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  color: #0000005d;
+  box-shadow: 2px 4px 60px -19px rgb(88, 66, 90);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 856px;
+  padding: 16px 16px;
+
+  @media screen and (max-width: 856px) {
+    & {
+      max-width: 90%;
+    }
+  }
+
+  &__header {
+    font-family: "Dancing Script", serif;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+
+    &__title {
+      color: #dd9cee;
+      font-size: 32px;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: justify;
+    padding-block: 16px;
+  }
+
+  &__footer {
+    font-family: "Dancing Script", serif;
+    color: black;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 16px;
+  }
 }

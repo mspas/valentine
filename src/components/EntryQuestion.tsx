@@ -7,6 +7,7 @@ function EntryQuestion() {
   const [visibleCount, setVisibleCount] = useState(0);
   const [buttonPosition, setButtonPosition] = useState({ top: null as number | null, left: null as number | null });
   const [showOrder, setShowOrder] = useState(false);
+  const [noText, setNoText] = useState('Nie');
   const orderRef = useRef<HTMLDivElement>(null);
 
   const lines = ["Domciu, 💖", "🤔 czy zostaniesz", "moją Walentynką? 🙈"];
@@ -35,6 +36,7 @@ function EntryQuestion() {
     const randomTop = Math.floor(Math.random() * 80) + 10;
     const randomLeft = Math.floor(Math.random() * 80) + 10;
     setButtonPosition({ top: randomTop, left: randomLeft });
+    setNoText('Nie 😶');
   };
 
   return (
@@ -49,7 +51,7 @@ function EntryQuestion() {
         </div>
 
         <div className={`toolbox fade-in ${visibleCount > lines.length ? "visible" : "hidden"}`}>
-          <button className='toolbox__button toolbox__button--success' onClick={handleYesButtonClick}>Tak🌹</button>
+          <button className='toolbox__button toolbox__button--success' onClick={handleYesButtonClick}>Tak😊</button>
 
           {!!buttonPosition.top && !!buttonPosition.left && <span className='toolbox__mock'></span>}
 
@@ -58,7 +60,7 @@ function EntryQuestion() {
               style={{ position: `${!buttonPosition.top && !buttonPosition.left ? 'relative' : 'absolute'}`, top: `${buttonPosition.top}%`, left: `${buttonPosition.left}%` }} 
               onClick={handleNoButtonClick}
             >
-              Nie
+              {noText}
             </button>
         </div>
       </div>
