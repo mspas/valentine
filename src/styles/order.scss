@@ -1,0 +1,181 @@
+.order-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  background: linear-gradient(to bottom, #ee9ca7, #fcddff);
+}
+
+.delivery-status {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  padding-inline: 16px;
+  background-color: #a648af7c;
+
+  img {
+    width: 75px;
+    border-radius: 5px;
+  }
+
+  &__details {
+    p {
+      margin-block: 8px;
+      font-size: 14px;
+    }
+  }
+
+  &__content {
+    &__status {
+      color: #ffade7;
+    }
+  }
+}
+
+.delivery-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.details-box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.order-box {
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  color: #0000005d;
+  box-shadow: 2px 4px 60px -19px rgb(88, 66, 90);
+  border-radius: 4px;
+  width: 300px;
+  padding: 12px 24px;
+
+  &--big {
+    padding: 16px;
+    width: 100%;
+    max-width: 856px;
+    padding: 16px 24px;
+
+    .order-box__header {
+      margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: 500px) {
+      & {
+        max-width: 300px;
+      }
+    }
+  }
+
+  &__header {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  &__content {
+    color: #000000ee;
+    font-size: 14px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__table {
+    color: #000000ee;
+    width: 100%;
+
+    th {
+      color: #00000054;
+      font-size: 12px;
+      border-bottom: 1px solid #00000018;
+    }
+
+    td {
+      position: relative;
+      font-size: 16px;
+      line-height: 3em;
+
+      &.emoji {
+        text-align: center;
+      }
+    }
+
+    &__item-title {
+      padding-left: 32px;
+    }
+  }
+}
+
+.emoji {
+  color: white;
+}
+
+#wrapper {
+	position: absolute;
+  top: 14px;
+	animation: pulse 1s infinite;
+}
+
+
+#pulsingheart { 
+  position: relative; 
+  width: 25px; 
+  height: 25px;
+} 
+
+#pulsingheart:before, #pulsingheart:after { 
+  position: absolute; 
+  content: ""; 
+  left: 12px; 
+  top: 0; 
+  width: 12px; 
+  height: 20px; 
+  background: #fc5c5c; 
+  border-radius: 12px 12px 0 0; 
+  transform: rotate(-45deg);  
+  transform-origin: 0 100%;
+  animation: pulsecolor 1s infinite;
+} 
+
+#pulsingheart:after { 
+  left: 0; 
+  transform: rotate(45deg); 
+  transform-origin :100% 100%;
+  animation: pulsecolor 1s infinite;
+}
+
+@keyframes pulse {
+	10% {transform: scale(1.1)}
+}
+
+@keyframes pulsecolor {
+  10% {background: #dd0000}
+}
+
+button.overview {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  background-color: #f899dc;
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+  padding-left: 8px;
+  margin: 20px auto;
+}
