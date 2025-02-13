@@ -6,11 +6,18 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  font-family: "Satisfy", serif;
 
   &__title {
-    font-size: 28px;
+    font-size: 34px;
     margin: 0;
     text-align: center;
+    color: #f8f1f1;
+
+    &--0 {
+      font-size: 48px;
+      color: #fa8a8a;
+    }
   }
 }
 
@@ -28,34 +35,19 @@
 }
 
 .toolbox {
-  margin-top: 64px;
+  margin-top: 54px;
   display: flex;
   gap: 32px;
   height: 42px;
   
   &__button {
-    background-color: hsla(285, 32%, 39%, 0.451);
-    padding: 10px 0;
-    width: 120px;
-    border-style: none;
-    border-radius: 20px;
-    font-size: 18px;
-    font-weight: 200;
-    letter-spacing: 4px;
-    transition: background-color 0.1s ease-in;
-    cursor: pointer;
-
-    &--success:hover {
-      background-color: hsla(140, 36%, 41%, 0.451);
-    }
-
-    &--error:hover {
-      background-color: hsla(4, 44%, 39%, 0.451);
-    }
+    font-size: 15px;
+    letter-spacing: 3px;
+    font-weight: 600;
   }  
 
   &__mock {
-    width: 120px;
+    width: 110px;
     opacity: 0;
   }
 }

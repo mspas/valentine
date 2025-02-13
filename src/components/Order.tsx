@@ -3,6 +3,7 @@ import '../styles/order.scss'
 import { scrollInto } from '../Utils';
 import Details from './Details';
 import kiss from'../assets/kiss1.png';
+import { order } from '../Texts';
 
 function Order() {
   const [showDetails, setShowDetails] = useState(false);
@@ -20,7 +21,7 @@ function Order() {
         <img src={kiss} alt="kiss"/>
           <div className="delivery-status__details">
             <p className="delivery-status__header">Szczegóły zamówienia nr 1 z dnia <b>6 stycznia 2024</b></p>
-            <p className="delivery-status__content">Status: <span className="delivery-status__content__status">W trakcie realizacji</span></p>
+            <p className="delivery-status__content">Status: W trakcie realizacji</p>
             <p className="delivery-status__content">Data wysyłki: <b>26 lutego 2024</b></p>
           </div>
         </div>
@@ -38,7 +39,7 @@ function Order() {
               <p className="order-box__header">Dane do dostawy</p>
 
               <div className="order-box__content">
-                <p>Dominika Ziomkowska,</p>
+                <p>{order.name},</p>
                 <p>prosto do serduszka <span className="emoji">🙈</span></p>
               </div>
             </div>
@@ -70,7 +71,7 @@ function Order() {
                       <div id="wrapper">
                         <div id="pulsingheart"></div>
                       </div>
-                      <span className="order-box__table__item-title">Miłość na zawsze</span>
+                      <span className="order-box__table__item-title">{order.itemName}</span>
                     </td>
                     <td className="emoji">♾️</td>
                     <td className="emoji">😘</td>
@@ -78,9 +79,8 @@ function Order() {
                 </tbody>
               </table>
 
-              <button className="overview" onClick={handleButtonClick}>
-                <span className="overview__icon">😍</span>
-                Podgląd
+              <button onClick={handleButtonClick}>
+                😍 Podgląd
               </button>
             </div>
           </div>

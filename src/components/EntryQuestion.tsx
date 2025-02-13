@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import '../styles/entry-question.scss'
 import Order from './Order';
 import { scrollInto } from '../Utils';
+import { entryLines } from '../Texts';
 
 function EntryQuestion() {
   const [visibleCount, setVisibleCount] = useState(0);
@@ -10,19 +11,17 @@ function EntryQuestion() {
   const [noText, setNoText] = useState('Nie');
   const orderRef = useRef<HTMLDivElement>(null);
 
-  const lines = ["Domciu, 💖", "🤔 czy zostaniesz", "moją Walentynką? 🙈"];
-
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibleCount((prev) => {
-        if (prev < lines.length + 1) {
+        if (prev < entryLines.length + 1) {
           return prev + 1;
         } else {
           clearInterval(interval);
           return prev;
         }
       });
-    }, 1000);
+    }, 1500);
     
     return () => clearInterval(interval);
   }, []);
@@ -43,14 +42,14 @@ function EntryQuestion() {
     <>
       <div className="container home-container">
         <div className="text-container">
-          {lines.map((line, index) => (
-            <h1 key={index} className={`text-container__title fade-in ${index < visibleCount ? "visible" : "hidden"}`}>
+          {entryLines.map((line, index) => (
+            <h1 key={index} className={`text-container__title text-container__title--${index} fade-in ${index < visibleCount ? "visible" : "hidden"}`}>
               {line}
             </h1>
           ))}
         </div>
 
-        <div className={`toolbox fade-in ${visibleCount > lines.length ? "visible" : "hidden"}`}>
+        <div className={`toolbox fade-in ${visibleCount > entryLines.length ? "visible" : "hidden"}`}>
           <button className='toolbox__button toolbox__button--success' onClick={handleYesButtonClick}>Tak😊</button>
 
           {!!buttonPosition.top && !!buttonPosition.left && <span className='toolbox__mock'></span>}

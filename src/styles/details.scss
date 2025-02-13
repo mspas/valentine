@@ -9,11 +9,15 @@
   box-sizing: border-box;
   background-color: #F5F5F5;
   color: #0000005d;
-  box-shadow: 2px 4px 60px -19px rgb(88, 66, 90);
+  box-shadow: 2px 4px 60px -19px rgb(118, 97, 119);
   border-radius: 4px;
   width: 100%;
   max-width: 856px;
   padding: 16px 16px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 1s ease-out forwards;
+  animation-delay: 0.5s;
 
   @media screen and (max-width: 856px) {
     & {
@@ -34,7 +38,7 @@
   }
 
   &__content {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
     text-align: justify;
     padding-block: 16px;
@@ -46,5 +50,16 @@
     font-size: 24px;
     text-align: right;
     margin-bottom: 16px;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Początek animacji - tekst jest wyżej */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Końcówka animacji - tekst w normalnej pozycji */
   }
 }
